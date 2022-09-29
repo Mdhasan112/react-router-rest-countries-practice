@@ -1,9 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from './components/Home/Home';
 import {
-  BrowserRouter,
-  Routes,
+  BrowserRouter as Router,
   Route,
   Switch,
 } from "react-router-dom";
@@ -13,12 +11,12 @@ import CountryDetail from './components/CountryDetail/CountryDetail';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
     <Switch>
       <Route exact path="/home">
         <Home />
       </Route>
-      <Route exact path="/home/:id">
+      <Route exact path="/country/:name">
         <CountryDetail />
       </Route>
       <Route exact path="/">
@@ -28,7 +26,7 @@ function App() {
         <NotFound />
       </Route>
     </Switch>
-    </BrowserRouter>
+    </Router>
   );
 }
 
